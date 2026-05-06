@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SplitPack - Festival-Packlisten</title>
+    <meta name="description" content="SplitPack hilft Festival-Crews dabei, Trips und Packlisten gemeinsam zu organisieren.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#f97316'
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-white text-slate-950 antialiased">
+    <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-6 py-8">
+      <header class="flex items-center justify-between gap-4 border-b border-slate-100 pb-6">
+        <a href="/" class="text-lg font-bold tracking-tight text-slate-950">SplitPack</a>
+        <nav class="flex items-center gap-4 text-sm font-semibold text-slate-600">
+          <a class="transition hover:text-accent" href="/datenschutz/">Datenschutz</a>
+          <a class="transition hover:text-accent" href="/impressum/">Impressum</a>
+        </nav>
+      </header>
+
+      <section class="grid flex-1 items-center gap-12 py-16 md:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="mb-4 inline-flex rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-sm font-semibold text-orange-700">
+            Festival-Packlisten f&uuml;r Gruppen
+          </p>
+          <h1 class="max-w-3xl text-5xl font-black tracking-tight text-slate-950 md:text-6xl">
+            Packlisten teilen, Verantwortungen kl&auml;ren, nichts vergessen.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            SplitPack organisiert Trips, Gegenst&auml;nde und Mengen f&uuml;r Festival-Crews. Die App speichert nur die Daten, die f&uuml;r gemeinsame Packlisten notwendig sind.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-sm shadow-orange-200 transition hover:bg-orange-600" href="/datenschutz/">
+              Datenschutz ansehen
+            </a>
+            <a class="rounded-full border border-slate-200 px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-orange-300 hover:text-orange-700" href="/impressum/">
+              Impressum
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-slate-100 bg-slate-50 p-6">
+          <div class="rounded-2xl bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div>
+                <p class="text-sm font-bold text-orange-600">Rock am See</p>
+                <p class="text-xs font-medium text-slate-500">Gemeinsamer Trip</p>
+              </div>
+              <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700">12 Items</span>
+            </div>
+            <ul class="mt-5 space-y-3 text-sm font-semibold text-slate-700">
+              <li class="flex items-center justify-between rounded-xl bg-orange-50 px-4 py-3"><span>Zelt</span><span class="text-orange-700">1x</span></li>
+              <li class="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3"><span>Powerbank</span><span>3x</span></li>
+              <li class="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3"><span>Pavillon</span><span>1x</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="flex flex-col gap-2 border-t border-slate-100 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; 2026 SplitPack. Betreiber: Matthis Eising.</p>
+        <div class="flex gap-4">
+          <a class="font-semibold hover:text-accent" href="/datenschutz/">Datenschutz</a>
+          <a class="font-semibold hover:text-accent" href="/impressum/">Impressum</a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
