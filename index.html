@@ -1,79 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SplitPack - Festival-Packlisten</title>
-    <meta name="description" content="SplitPack hilft Festival-Crews dabei, Trips und Packlisten gemeinsam zu organisieren.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SplitPack | Gemeinsam packen</title>
+    <meta
+      name="description"
+      content="SplitPack hilft Gruppen dabei, Trips und Packlisten gemeinsam zu organisieren."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              accent: '#f97316'
-            }
-          }
-        }
-      }
+              ink: "#172033",
+              leaf: "#2f8f83",
+              coral: "#ff6f61",
+              sun: "#f5b84b",
+            },
+          },
+        },
+      };
     </script>
   </head>
-  <body class="min-h-screen bg-white text-slate-950 antialiased">
-    <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-6 py-8">
-      <header class="flex items-center justify-between gap-4 border-b border-slate-100 pb-6">
-        <a href="/" class="text-lg font-bold tracking-tight text-slate-950">SplitPack</a>
-        <nav class="flex items-center gap-4 text-sm font-semibold text-slate-600">
-          <a class="transition hover:text-accent" href="/datenschutz/">Datenschutz</a>
-          <a class="transition hover:text-accent" href="/impressum/">Impressum</a>
-        </nav>
+  <body class="min-h-screen bg-[#f8faf8] text-ink antialiased">
+    <main class="min-h-screen">
+      <header class="border-b border-slate-200/80 bg-white/90">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 sm:px-6">
+          <a class="text-lg font-semibold tracking-tight text-ink" href="index.html">SplitPack</a>
+          <nav class="flex items-center gap-4 text-sm font-medium text-slate-600">
+            <a class="transition hover:text-leaf" href="datenschutz.html">Datenschutz</a>
+            <a class="transition hover:text-leaf" href="impressum.html">Impressum</a>
+          </nav>
+        </div>
       </header>
 
-      <section class="grid flex-1 items-center gap-12 py-16 md:grid-cols-[1.1fr_0.9fr]">
+      <section class="mx-auto grid max-w-6xl gap-12 px-5 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <div>
-          <p class="mb-4 inline-flex rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-sm font-semibold text-orange-700">
-            Festival-Packlisten f&uuml;r Gruppen
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wide text-leaf">
+            Packlisten fuer Gruppenreisen
           </p>
-          <h1 class="max-w-3xl text-5xl font-black tracking-tight text-slate-950 md:text-6xl">
-            Packlisten teilen, Verantwortungen kl&auml;ren, nichts vergessen.
+          <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
+            Gemeinsam planen, fair verteilen, entspannter losfahren.
           </h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            SplitPack organisiert Trips, Gegenst&auml;nde und Mengen f&uuml;r Festival-Crews. Die App speichert nur die Daten, die f&uuml;r gemeinsame Packlisten notwendig sind.
+            SplitPack organisiert Trips, Mitglieder und Packlisten an einem Ort. Die App ist fuer
+            Gruppen gemacht, die schnell klaeren wollen, wer was mitbringt und was noch offen ist.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a class="rounded-full bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-sm shadow-orange-200 transition hover:bg-orange-600" href="/datenschutz/">
+            <a
+              class="inline-flex items-center rounded-lg bg-leaf px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#28786f]"
+              href="datenschutz.html"
+            >
               Datenschutz ansehen
             </a>
-            <a class="rounded-full border border-slate-200 px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-orange-300 hover:text-orange-700" href="/impressum/">
+            <a
+              class="inline-flex items-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:border-coral hover:text-coral"
+              href="impressum.html"
+            >
               Impressum
             </a>
           </div>
         </div>
 
-        <div class="rounded-3xl border border-slate-100 bg-slate-50 p-6">
-          <div class="rounded-2xl bg-white p-5 shadow-sm">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div>
-                <p class="text-sm font-bold text-orange-600">Rock am See</p>
-                <p class="text-xs font-medium text-slate-500">Gemeinsamer Trip</p>
-              </div>
-              <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700">12 Items</span>
+        <div class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-5">
+            <div>
+              <p class="text-sm font-semibold text-leaf">Sommertrip</p>
+              <h2 class="mt-1 text-2xl font-semibold tracking-tight text-ink">Packliste</h2>
             </div>
-            <ul class="mt-5 space-y-3 text-sm font-semibold text-slate-700">
-              <li class="flex items-center justify-between rounded-xl bg-orange-50 px-4 py-3"><span>Zelt</span><span class="text-orange-700">1x</span></li>
-              <li class="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3"><span>Powerbank</span><span>3x</span></li>
-              <li class="flex items-center justify-between rounded-xl bg-slate-50 px-4 py-3"><span>Pavillon</span><span>1x</span></li>
-            </ul>
+            <span class="rounded-md bg-sun/20 px-3 py-1 text-xs font-semibold text-[#8a5a00]">
+              12 offen
+            </span>
           </div>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex items-center justify-between rounded-md bg-[#eef7f5] px-4 py-3">
+              <span class="font-medium text-ink">Zelt</span>
+              <span class="text-slate-600">Alex</span>
+            </li>
+            <li class="flex items-center justify-between rounded-md bg-slate-50 px-4 py-3">
+              <span class="font-medium text-ink">Powerbanks</span>
+              <span class="text-slate-600">3x</span>
+            </li>
+            <li class="flex items-center justify-between rounded-md bg-slate-50 px-4 py-3">
+              <span class="font-medium text-ink">Pavillon</span>
+              <span class="text-slate-600">offen</span>
+            </li>
+          </ul>
         </div>
       </section>
-
-      <footer class="flex flex-col gap-2 border-t border-slate-100 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>&copy; 2026 SplitPack. Betreiber: Matthis Eising.</p>
-        <div class="flex gap-4">
-          <a class="font-semibold hover:text-accent" href="/datenschutz/">Datenschutz</a>
-          <a class="font-semibold hover:text-accent" href="/impressum/">Impressum</a>
-        </div>
-      </footer>
     </main>
   </body>
 </html>
