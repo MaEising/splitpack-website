@@ -105,6 +105,20 @@
         outline-offset: 3px;
       }
 
+      .secondary {
+        display: inline-flex;
+        margin-top: 16px;
+        color: var(--accent);
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .secondary:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
       .hidden {
         display: none;
       }
@@ -123,6 +137,7 @@
         <h1 id="invite-title">SplitPack</h1>
         <p>Du wurdest zu einem Trip eingeladen.</p>
         <a id="open-app" class="button" href="/">In SplitPack öffnen</a>
+        <a id="install-app" class="secondary hidden" href="/">App installieren</a>
       </section>
 
       <section id="not-found" class="panel hidden" aria-labelledby="error-title">
@@ -141,6 +156,13 @@
         var invite = document.getElementById("invite");
         var notFound = document.getElementById("not-found");
         var openApp = document.getElementById("open-app");
+        var installApp = document.getElementById("install-app");
+        var userAgent = window.navigator.userAgent || "";
+        var tripIdPattern =
+          /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+        var appStoreUrl = "https://apps.apple.com/app/id6766931002";
+        var playStoreUrl = "https://play.google.com/store/apps/details?id=com.splitpack.app";
+        var storeUrl = "";
 
         if (match) {
           try {
@@ -150,18 +172,38 @@
           }
         }
 
-        if (!tripId) {
+        if (!tripId || !tripIdPattern.test(tripId)) {
           notFound.classList.remove("hidden");
           return;
         }
 
         var deepLink = "splitpack://join/" + encodeURIComponent(tripId);
         openApp.setAttribute("href", deepLink);
+
+        if (/iPad|iPhone|iPod/.test(userAgent)) {
+          storeUrl = appStoreUrl;
+        } else if (/Android/.test(userAgent)) {
+          storeUrl = playStoreUrl;
+        }
+
+        if (storeUrl) {
+          installApp.setAttribute("href", storeUrl);
+          installApp.classList.remove("hidden");
+        }
+
         invite.classList.remove("hidden");
 
         window.setTimeout(function () {
           window.location.href = deepLink;
         }, 650);
+
+        if (storeUrl) {
+          window.setTimeout(function () {
+            if (document.visibilityState === "visible") {
+              window.location.href = storeUrl;
+            }
+          }, 2200);
+        }
       })();
     </script>
   </body>
