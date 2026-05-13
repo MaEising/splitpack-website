@@ -3,23 +3,166 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Seite nicht gefunden - SplitPack</title>
-    <meta name="description" content="Die angeforderte SplitPack-Seite wurde nicht gefunden." />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SplitPack</title>
+    <meta name="description" content="SplitPack Invite Link" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #fffaf4;
+        --card: #ffffff;
+        --ink: #172033;
+        --muted: #64748b;
+        --line: #fed7aa;
+        --accent: #f97316;
+        --accent-dark: #c2410c;
+        --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, rgba(251, 191, 36, 0.18), transparent 34rem),
+          var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px 20px;
+      }
+
+      .panel {
+        width: min(100%, 440px);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: var(--shadow);
+        padding: 32px;
+        text-align: center;
+      }
+
+      .mark {
+        display: inline-grid;
+        width: 56px;
+        height: 56px;
+        place-items: center;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #fb923c, #f59e0b);
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 16px auto 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 28px;
+        border-radius: 12px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 0 22px;
+        text-decoration: none;
+        transition:
+          background 150ms ease,
+          transform 150ms ease;
+      }
+
+      .button:hover {
+        background: var(--accent-dark);
+        transform: translateY(-1px);
+      }
+
+      .button:focus-visible {
+        outline: 3px solid rgba(249, 115, 22, 0.3);
+        outline-offset: 3px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @media (max-width: 420px) {
+        .panel {
+          padding: 28px 22px;
+        }
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-white text-slate-950 antialiased">
-    <main class="mx-auto flex min-h-screen w-full max-w-3xl flex-col items-start justify-center px-6 py-12">
-      <p class="mb-3 text-sm font-bold uppercase tracking-wide text-orange-600">404</p>
-      <h1 class="text-4xl font-black tracking-tight">Seite nicht gefunden</h1>
-      <p class="mt-4 max-w-xl text-lg leading-8 text-slate-600">
-        Die angeforderte Seite existiert nicht oder wurde verschoben.
-      </p>
-      <a
-        class="mt-8 rounded-lg bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-slate-800"
-        href="index.html"
-      >
-        Zur Startseite
-      </a>
+  <body>
+    <main>
+      <section id="invite" class="panel hidden" aria-labelledby="invite-title">
+        <div class="mark" aria-hidden="true">S</div>
+        <h1 id="invite-title">SplitPack</h1>
+        <p>Du wurdest zu einem Trip eingeladen.</p>
+        <a id="open-app" class="button" href="/">In SplitPack öffnen</a>
+      </section>
+
+      <section id="not-found" class="panel hidden" aria-labelledby="error-title">
+        <div class="mark" aria-hidden="true">S</div>
+        <h1 id="error-title">SplitPack</h1>
+        <p>Dieser Link ist nicht gültig oder die Seite wurde nicht gefunden.</p>
+        <a class="button" href="/">Zur Startseite</a>
+      </section>
     </main>
+
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var match = path.match(/^\/join\/([^/]+)\/?$/);
+        var tripId = "";
+        var invite = document.getElementById("invite");
+        var notFound = document.getElementById("not-found");
+        var openApp = document.getElementById("open-app");
+
+        if (match) {
+          try {
+            tripId = decodeURIComponent(match[1]);
+          } catch (error) {
+            tripId = "";
+          }
+        }
+
+        if (!tripId) {
+          notFound.classList.remove("hidden");
+          return;
+        }
+
+        var deepLink = "splitpack://join/" + encodeURIComponent(tripId);
+        openApp.setAttribute("href", deepLink);
+        invite.classList.remove("hidden");
+
+        window.setTimeout(function () {
+          window.location.href = deepLink;
+        }, 650);
+      })();
+    </script>
   </body>
 </html>

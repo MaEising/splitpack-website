@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "6766931002.com.splitpack.app"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "SplitPack invite links"
+          }
+        ]
+      }
+    ]
+  }
+}
