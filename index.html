@@ -8,6 +8,19 @@
       name="description"
       content="SplitPack Invite Links fuer Trips."
     />
+    <script>
+      (() => {
+        const kegelChefHosts = new Set([
+          "kegelchef.splitpack.de",
+          "kegelchef.splitpack.info",
+          "kegelchef.splitpack.online",
+        ]);
+
+        if (kegelChefHosts.has(window.location.hostname)) {
+          window.location.replace("/kegelchef/");
+        }
+      })();
+    </script>
     <style>
       :root {
         color-scheme: light;

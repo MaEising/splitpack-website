@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Datenschutzerklärung | SplitPack</title>
     <meta name="description" content="Datenschutzerklärung der SplitPack App gemäß DSGVO." />
+    <script>
+      (() => {
+        const kegelChefHosts = new Set([
+          "kegelchef.splitpack.de",
+          "kegelchef.splitpack.info",
+          "kegelchef.splitpack.online",
+        ]);
+
+        if (kegelChefHosts.has(window.location.hostname)) {
+          window.location.replace("/kegelchef/datenschutz.html");
+        }
+      })();
+    </script>
     <style>
       * {
         box-sizing: border-box;

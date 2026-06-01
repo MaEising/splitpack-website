@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Impressum | SplitPack</title>
     <meta name="description" content="Impressum der SplitPack App." />
+    <script>
+      (() => {
+        const kegelChefHosts = new Set([
+          "kegelchef.splitpack.de",
+          "kegelchef.splitpack.info",
+          "kegelchef.splitpack.online",
+        ]);
+
+        if (kegelChefHosts.has(window.location.hostname)) {
+          window.location.replace("/kegelchef/impressum.html");
+        }
+      })();
+    </script>
     <style>
       * {
         box-sizing: border-box;
