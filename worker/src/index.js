@@ -1,5 +1,5 @@
 const SHORT_LINK_PREFIX = 'https://links.splitpack.de/kc/';
-const TRANSFER_TTL_SECONDS = 7 * 24 * 60 * 60;
+const TRANSFER_TTL_SECONDS = 48 * 60 * 60;
 const MAX_REQUEST_BYTES = 30_000;
 const MAX_TOKEN_LENGTH = 50_000;
 const MAX_ITEMS = 250;

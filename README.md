@@ -34,7 +34,7 @@ Der KegelChef-Transfer-Service laeuft separat als Cloudflare Worker auf denselbe
 
    Die ausgegebenen IDs in `wrangler.toml` eintragen und anschliessend mit
    `npm run worker:deploy` deployen. Der Worker speichert KegelChef-Konfigurationen
-   maximal 7 Tage und liefert nur kurze Token-Links aus.
+   maximal 48 Stunden und liefert nur kurze Token-Links aus.
 
 Hinweis: Die iOS-Datei `.well-known/apple-app-site-association` nutzt die Apple Team ID `5P4LKN6KLB` im Format `<TEAM_ID>.com.splitpack.app`. Die App Store Connect App ID `6766931002` ist nur fuer den Store-Link geeignet.
 KegelChef ist unter derselben Team ID als `5P4LKN6KLB.com.kegelchef.app` hinterlegt.
