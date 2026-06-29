@@ -12,6 +12,17 @@
             "comment": "SplitPack invite links"
           }
         ]
+      },
+      {
+        "appIDs": [
+          "5P4LKN6KLB.com.kegelchef.app"
+        ],
+        "components": [
+          {
+            "/": "/kc/*",
+            "comment": "KegelChef configuration transfer links"
+          }
+        ]
       }
     ]
   }

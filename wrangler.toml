@@ -1,0 +1,13 @@
+name = "splitpack-links"
+main = "worker/src/index.js"
+compatibility_date = "2026-06-29"
+
+routes = [
+  { pattern = "links.splitpack.de/api/kegelchef/*", zone_name = "splitpack.de" },
+  { pattern = "links.splitpack.de/kc/*", zone_name = "splitpack.de" }
+]
+
+[[kv_namespaces]]
+binding = "CONFIG_TRANSFERS"
+id = "9c169010065443d6b5c68a765644eac1"
+preview_id = "729016f8cc85463386964c427c055087"

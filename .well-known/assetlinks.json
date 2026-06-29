@@ -8,5 +8,15 @@
         "REPLACE_WITH_ANDROID_APP_SIGNING_SHA256_FINGERPRINT"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kegelchef.app",
+      "sha256_cert_fingerprints": [
+        "REPLACE_WITH_KEGELCHEF_ANDROID_APP_SIGNING_SHA256_FINGERPRINT"
+      ]
+    }
   }
 ]
